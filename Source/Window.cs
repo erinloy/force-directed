@@ -101,6 +101,7 @@ namespace ForceDirected {
         public Window() {
             InitializeComponent();
             InitializeMouseEvents();
+            InitializeKeyboardEvents();
 
             DoubleBuffered = true;
             Paint += Draw;
@@ -175,6 +176,25 @@ namespace ForceDirected {
             // Initialize mouse wheel behaviour. 
             MouseWheel += (sender, e) => {
                 _model.MoveCamera(e.Delta); ;
+            };
+        }
+
+        /// <summary>
+        /// Initializes keyboard behaviour. 
+        /// </summary>
+        private void InitializeKeyboardEvents()
+        {
+            // Initialize mouse down behaviour. 
+            KeyPress += (sender, e) =>
+            {
+                switch (e.KeyChar)
+                {
+                    case 's':
+                        _model.Scramble();
+                        break;
+                    default:
+                        break;
+                }
             };
         }
 

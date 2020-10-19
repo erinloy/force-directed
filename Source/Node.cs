@@ -126,7 +126,7 @@ namespace ForceDirected {
         /// <summary>
         /// The color of the node.
         /// </summary>
-        public Color Colour {
+        public Color Colour { 
             get {
                 return _colour;
             }
@@ -237,6 +237,11 @@ namespace ForceDirected {
                     }
                 }
             }
+        }
+
+        public void Scramble()
+        {
+            Location = PseudoRandom.Vector(RadiusRange);
         }
 
         /// <summary>

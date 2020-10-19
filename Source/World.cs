@@ -222,6 +222,15 @@ namespace ForceDirected {
             _renderer.Camera.Z = _cameraZ;
         }
 
+        public void Scramble()
+        {
+            lock (_nodeLock)
+                Parallel.ForEach(_nodes, node =>
+                {
+                    node.Scramble();
+                });
+        }
+
         /// <summary>
         /// Rotates the world model along an arbitrary axis. 
         /// </summary>
