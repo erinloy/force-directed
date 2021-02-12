@@ -1,0 +1,3 @@
+[submodule "force-directed"]
+	path = force-directed
+	url = https://github.com/erinloy/force-directed
